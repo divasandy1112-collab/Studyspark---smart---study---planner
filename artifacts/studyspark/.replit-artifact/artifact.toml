@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "StudySpark — Smart Study Planner"
+description = "A friendly, mobile-responsive study planner that prioritizes tasks with a transparent rule-based score, tracks progress, and visualizes study time by subject."
+version = "1.0.0"
+id = "artifacts/studyspark"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21219
+
+[services.development]
+run = "pnpm --filter @workspace/studyspark run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studyspark", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studyspark/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21219"
+BASE_PATH = "/"
