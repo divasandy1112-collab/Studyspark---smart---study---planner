@@ -19,19 +19,19 @@ Key Features
 
 How the Priority System Works
 
-StudySpark currently uses a rule-based priority system, not a trained machine-learning model.
+StudySpark uses a transparent, rule-based scoring algorithm to prioritize incomplete study tasks. It does not currently use a trained machine-learning model.
 
-The application evaluates task information using programmed rules and scoring logic. Factors such as deadlines, task difficulty, and confidence levels influence the calculated priority. Tasks are then sorted according to their resulting priority, and the application displays explanations to help users understand why tasks are ranked as they are.
+Each active task receives a score based on three factors:
 
-This approach emphasizes transparency and interpretability: students can see the reasoning behind task recommendations instead of receiving unexplained results.
+- Deadline urgency: Tasks that are overdue or due today receive 50 points. Tasks due in 1 day receive 45 points, within 2–3 days receive 35 points, within 4–7 days receive 25 points, within 8–14 days receive 15 points, and tasks due later receive 5 points.
+- Task difficulty: Easy tasks receive 10 points, medium tasks receive 20 points, and hard tasks receive 30 points.
+- Confidence level: Confidence ratings of 1–2 receive 20 points, a rating of 3 receives 12 points, and ratings of 4–5 receive 5 points.
 
-Technology and Implementation
+The three values are added to produce the task's total priority score. Tasks are sorted from highest to lowest score, with deadline and task title used to break ties.
 
-- Web-based user interface
-- JavaScript-based application logic
-- Browser local storage for saving tasks and completion status
+This approach makes the prioritization process understandable and predictable. Students can see the factors behind a recommendation rather than relying on an unexplained prediction.
 
-Note: The technology list should be updated if the project uses additional frameworks or libraries.
+The scores are heuristic rules chosen for this application; they are not learned from training data. Future versions could evaluate these rules with student feedback and explore data-driven recommendations.
 
 Current Limitations
 
