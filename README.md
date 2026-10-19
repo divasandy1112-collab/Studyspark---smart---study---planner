@@ -55,3 +55,16 @@ The goal is to build practical programming skills while creating a useful tool f
 Project Status
 
 Early-stage portfolio project. Features and documentation may evolve as development continues.
+
+What I Learned
+
+Building StudySpark gave me practical experience in planning, testing, and documenting a web application. Through this project, I explored:
+
+- Problem-solving: Turning the challenge of organizing study tasks into a structured priority system.
+- Algorithm design: Using deadlines, task difficulty, and confidence levels to calculate priority scores.
+- Frontend development: Working with an interactive, responsive interface, task lists, progress indicators, and charts.
+- State management and persistence: Learning how browser local storage preserves task data after a page refresh.
+- Testing: Checking task creation, task completion, priority calculations, and overdue-task behaviour.
+- Technical documentation: Explaining the project's purpose, features, algorithm, limitations, and future improvements.
+
+This project has encouraged me to deepen my programming skills and explore software engineering and the foundations of artificial intelligence.
