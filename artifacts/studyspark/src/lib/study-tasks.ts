@@ -63,6 +63,7 @@ export function useStudyTasks() {
     const today = localDateString(new Date());
     const daysUntil = (deadline: string) => Math.ceil((new Date(`${deadline}T12:00:00`).getTime() - new Date(`${today}T12:00:00`).getTime()) / 86400000);
     return tasks.filter((task) => !task.completed).map((task) => {
+      // tasks due today or overdue receive the highest urgency scory 
       const days = daysUntil(task.deadline);
       const deadlinePoints = days <= 0 ? 50 : days === 1 ? 45 : days <= 3 ? 35 : days <= 7 ? 25 : days <= 14 ? 15 : 5;
       const difficultyPoints = task.difficulty === 'easy' ? 10 : task.difficulty === 'medium' ? 20 : 30;
